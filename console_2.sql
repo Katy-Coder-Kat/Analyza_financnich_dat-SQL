@@ -285,3 +285,18 @@ DELIMITER ;
 CALL financial21_99.generate_cards_at_expiration_report('2001-01-01');
 SELECT * FROM financial21_99.cards_at_expiration;
 
+SELECT
+    c.gender,
+    AVG(2024 - YEAR(c.birth_date)) AS prumerny_vek
+FROM client c
+JOIN disp d ON c.client_id = d.client_id
+JOIN account a ON d.account_id = a.account_id
+JOIN loan l ON a.account_id = l.account_id
+WHERE l.status IN ('A', 'C')
+AND d.type = 'OWNER'
+GROUP BY c.gender;
+SELECT
+    MIN(YEAR(birth_date)) AS nejstarsi,
+    MAX(YEAR(birth_date)) AS nejmladsi
+FROM client;
+
