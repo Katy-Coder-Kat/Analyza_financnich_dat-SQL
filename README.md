@@ -16,7 +16,7 @@ Hlavní dotazy a výsledky
 Gender	Celková výše splacených úvěrů	Počet splacených úvěrů
 M	43 256 388	299
 F	44 425 200	307
-Výsledek: Více jich splatily ženy. Pravděpodobně lepší finanční plánování... nebo jen lepší strategie, jak se vyhnout bankám.
+Výsledek: Více jich splatily ženy. 
 2.Jaký je průměrný věk dlužníka podle pohlaví?
 Dotaz na výpočet průměrného věku dlužníků (počítáno jako rozdíl mezi rokem 2024 a jejich rokem narození):
 Výsledky:
@@ -33,7 +33,7 @@ Výsledek: Hlavní město Praha vede ve všech kategoriích. Logické – nejví
 Výsledek: Nikdo neexistuje.
 Původně jsem si myslela, že filtr jen vyřadil pár klientů, ale realita byla tvrdší: žádný klient nesplňoval všechny tři podmínky najednou.
 Problém byl ve dvou bodech:
-V databázi skoro neexistují klienti narození po roce 1990. Zřejmě to byla banka pro zkušenější ročníky. Možná mladší generace už dávno vymyslela nějakou alternativní ekonomiku nebo se do půjček prostě nehrne.
+V databázi skoro neexistují klienti narození po roce 1990. Zřejmě to byla banka pro zkušenější ročníky. 
 Nikdo neměl víc než 5 půjček. Buď byla banka opravdu přísná v poskytování úvěrů, nebo jsou klienti extrémně finančně zodpovědní. (To druhé moc pravděpodobné není.)
 Po uvolnění podmínek (snížení limitu půjček, zvýšení věkového limitu) se začaly objevovat výsledky. Lekce pro příště: ne všechny kombinace filtrů dávají smysl, občas je potřeba udělat krok zpět a podívat se, jestli jsem si sama nenastavila nemožné požadavky.
 5. Kontrola platebních karet s končící platností
