@@ -31,20 +31,19 @@ District ID	Počet klientů	Celková výše splacených úvěrů	Počet úvěrů
 Výsledek: Hlavní město Praha vede ve všech kategoriích. Logické – nejvíc lidí, nejvíc úvěrů, nejvíc dluhů.
 4. Výběr klientů s určitými podmínkami (zůstatek > 1000, více než 5 půjček, narození po roce 1990)
 Výsledek: Nikdo neexistuje.
-Původně jsem si myslela, že filtr jen vyřadil pár klientů, ale realita byla tvrdší: žádný klient nesplňoval všechny tři podmínky najednou.
+Původně jsem si myslela, že filtr jen vyřadil pár klientů, ale žádný klient nesplňoval všechny tři podmínky najednou.
 Problém byl ve dvou bodech:
 V databázi skoro neexistují klienti narození po roce 1990. Zřejmě to byla banka pro zkušenější ročníky. 
 Nikdo neměl víc než 5 půjček. Buď byla banka opravdu přísná v poskytování úvěrů, nebo jsou klienti extrémně finančně zodpovědní. (To druhé moc pravděpodobné není.)
-Po uvolnění podmínek (snížení limitu půjček, zvýšení věkového limitu) se začaly objevovat výsledky. Lekce pro příště: ne všechny kombinace filtrů dávají smysl, občas je potřeba udělat krok zpět a podívat se, jestli jsem si sama nenastavila nemožné požadavky.
-5. Kontrola platebních karet s končící platností
+
 Client ID	Card ID	Expiration Date	Client Address	Generated For Date
 483	83	2001-01-05	Prague	2001-01-01
 858	149	2001-01-07	East Bohemia	2001-01-01
 1913	304	2001-01-06	North Moravia	2001-01-01
-Výsledek: Úspěšně vygenerovaná tabulka expirovaných karet. Klienti by si měli začít hlídat schránky, jinak je čeká nemilé překvapení u bankomatu.:D
+Výsledek: Úspěšně vygenerovaná tabulka expirovaných karet.
 
 Chyby, na které jsem narazila
-Join na district tabulku nefungoval – ukázalo se, že sloupce mají jiný název, než jsem čekala. Databáze mě prostě ráda překvapuje.
-Filtr klientů podle věku nevracel žádná data – po pečlivém pátrání jsem zjistila, že v databázi skoro žádní “mladí” klienti nejsou. No, asi byli chytřejší a úvěrům se vyhnuli.
+Join na district tabulku nefungoval – ukázalo se, že sloupce mají jiný název, než jsem čekala. 
+Filtr klientů podle věku nevracel žádná data – po pečlivém pátrání jsem zjistila, že v databázi skoro žádní “mladí” klienti nejsou. 
 Závěr
-Projekt proběhl úspěšně, i když pár momentů mě donutilo zamyslet se nad životními rozhodnutími (a databázovým designem). 
+Projekt proběhl úspěšně
