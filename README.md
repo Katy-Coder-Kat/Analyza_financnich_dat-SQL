@@ -11,7 +11,7 @@ disp	Propojení účtů s klienty (držitel účtu, disponent)
 district	Informace o regionech (název, počet obyvatel, průměrná mzda)
 card	Vydané platební karty (ID karty, datum vydání, typ)
 
-Hlavní dotazy a výsledky
+Hlavní dotazy a výsledky 
 1. Kdo má víc splacených půjček – muži nebo ženy?
    
 Celková výše splacených úvěrů	Počet splacených úvěrů
