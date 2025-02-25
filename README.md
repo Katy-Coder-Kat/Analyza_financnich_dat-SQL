@@ -13,22 +13,27 @@ card	Vydané platební karty (ID karty, datum vydání, typ)
 
 Hlavní dotazy a výsledky
 1. Kdo má víc splacených půjček – muži nebo ženy?
-Gender	Celková výše splacených úvěrů	Počet splacených úvěrů
+   
+Celková výše splacených úvěrů	Počet splacených úvěrů
 M	43 256 388	299
 F	44 425 200	307
 Výsledek: Více jich splatily ženy. 
+
 2.Jaký je průměrný věk dlužníka podle pohlaví?
+
 Dotaz na výpočet průměrného věku dlužníků (počítáno jako rozdíl mezi rokem 2024 a jejich rokem narození):
 Výsledky:
 Muži mají průměrný věk 66,87 let
 Ženy mají průměrný věk 64,85 let
 Dataset obsahuje pouze klienty narozené mezi lety 1911 a 1987, což vysvětluje vyšší průměrný věk.
+
 3. Který region má nejvíce klientů a kde se nejvíce splácí úvěry?
 District ID	Počet klientů	Celková výše splacených úvěrů	Počet úvěrů
 1 (Praha)	92	14 180 088	92
 74	22	3 790 404	22
 64	19	3 786 336	19
 Výsledek: Hlavní město Praha vede ve všech kategoriích. Logické – nejvíc lidí, nejvíc úvěrů, nejvíc dluhů.
+
 4. Výběr klientů s určitými podmínkami (zůstatek > 1000, více než 5 půjček, narození po roce 1990)
 Výsledek: Nikdo neexistuje.
 Původně jsem si myslela, že filtr jen vyřadil pár klientů, ale žádný klient nesplňoval všechny tři podmínky najednou.
