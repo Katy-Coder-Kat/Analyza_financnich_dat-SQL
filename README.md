@@ -17,7 +17,7 @@ account	Bankovní účty (ID účtu, okres, frekvence používání)
 disp	Propojení účtů s klienty (držitel účtu, disponent)
 district	Regiony (název, počet obyvatel, průměrná mzda)
 card	Platební karty (ID karty, datum vydání, typ)
-🔎 Hlavní zjištění
+Hlavní zjištění
 ## 📊 Kdo má víc splacených půjček – muži nebo ženy?
 
 | Pohlaví | Celková výše splacených úvěrů | Počet splacených úvěrů |
@@ -25,7 +25,7 @@ card	Platební karty (ID karty, datum vydání, typ)
 | **Muži**  | 43 256 388 | 299 |
 | **Ženy**  | 44 425 200 | 307 |
 
-🔎 **Výsledek:** Ženy splácejí víc.
+ **Výsledek:** Ženy splácejí víc.
 
 ---
 
@@ -36,7 +36,7 @@ card	Platební karty (ID karty, datum vydání, typ)
 | **Muži**  | 66,87 let |
 | **Ženy**  | 64,85 let |
 
-🧐 **Vysvětlení:** Databáze obsahuje pouze klienty narozené mezi lety **1911 a 1987**. Žádní dvacátníci, spíš zkušení matadoři finančního světa.
+ **Vysvětlení:** Databáze obsahuje pouze klienty narozené mezi lety **1911 a 1987**. Žádní dvacátníci, spíš zkušení matadoři finančního světa.
 
 ---
 
@@ -52,7 +52,7 @@ card	Platební karty (ID karty, datum vydání, typ)
 
 ---
 
-## 🏦 Kolik klientů splňuje podmínky (zůstatek > 1000, více než 5 půjček, narození po roce 1990)?
+##  Kolik klientů splňuje podmínky (zůstatek > 1000, více než 5 půjček, narození po roce 1990)?
 
 ☠ **Nikdo. Nula. Ani jeden člověk.**
 
