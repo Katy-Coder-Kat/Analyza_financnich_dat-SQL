@@ -1,54 +1,60 @@
-Úvod
-Tento projekt obsahuje SQL dotazy pro analýzu finančních dat, identifikaci splacených úvěrů podle pohlaví, kontrolu expirovaných karet a další zajímavosti. Po cestě jsem narazila na pár nečekaných překvapení, ale nakonec všechno klaplo (víceméně).
+📊 SQL Analýza Finančních Dat
+SQL dotazy, které odhalují, kdo splácí dluhy, kde se točí nejvíc peněz a proč v této bance skoro nikdo pod 30 neexistuje.
 
-Použité databázové tabulky
+📌 Co všechno tahle analýza řeší?
+✅ Kdo má na kontě víc splacených půjček – muži, nebo ženy?
+✅ Jaký je průměrný věk dlužníků?
+✅ Které regiony mají nejvíc úvěrů a splácení?
+✅ Kolik klientů splňuje podmínky zůstatek > 1000, víc než 5 půjček, narození po 1990?
+💀 (Nikdo)
+✅ Kterým klientům expirovala platební karta?
 
+📂 Databázové tabulky
 Tabulka	Popis
-client	Informace o klientech (ID, datum narození, okres atd.)
-loan	Údaje o úvěrech (výše půjčky, status, splatnost)
+client	Informace o klientech (ID, datum narození, okres, atd.)
+loan	Úvěry (výše půjčky, stav, splatnost)
 account	Bankovní účty (ID účtu, okres, frekvence používání)
 disp	Propojení účtů s klienty (držitel účtu, disponent)
-district	Informace o regionech (název, počet obyvatel, průměrná mzda)
-card	Vydané platební karty (ID karty, datum vydání, typ)
+district	Regiony (název, počet obyvatel, průměrná mzda)
+card	Platební karty (ID karty, datum vydání, typ)
+🔎 Hlavní zjištění
+1️⃣ Kdo má víc splacených úvěrů – muži, nebo ženy?
+Pohlaví	Celková výše splacených úvěrů	Počet splacených úvěrů
+Muži	43 256 388	299
+Ženy	44 425 200	307
+📌 Výsledek: Ženy splácejí víc.
 
-Hlavní dotazy a výsledky 
-1. Kdo má víc splacených půjček – muži nebo ženy?
-   
-Celková výše splacených úvěrů	Počet splacených úvěrů
-M	43 256 388	299
-F	44 425 200	307
-Výsledek: Více jich splatily ženy. 
+2️⃣ Jaký je průměrný věk dlužníků?
+Pohlaví	Průměrný věk
+Muži	66,87 let
+Ženy	64,85 let
+📌 Vysvětlení: Databáze obsahuje jen klienty narozené mezi 1911 a 1987. Takže žádní dvacátníci – spíš zkušení matadoři finančního světa.
 
-2.Jaký je průměrný věk dlužníka podle pohlaví?
-
-Dotaz na výpočet průměrného věku dlužníků (počítáno jako rozdíl mezi rokem 2024 a jejich rokem narození):
-Výsledky:
-Muži mají průměrný věk 66,87 let
-Ženy mají průměrný věk 64,85 let
-Dataset obsahuje pouze klienty narozené mezi lety 1911 a 1987, což vysvětluje vyšší průměrný věk.
-
-3. Který region má nejvíce klientů a kde se nejvíce splácí úvěry?
+3️⃣ Který region má nejvíc úvěrů a splácení?
 District ID	Počet klientů	Celková výše splacených úvěrů	Počet úvěrů
 1 (Praha)	92	14 180 088	92
 74	22	3 790 404	22
 64	19	3 786 336	19
-Výsledek: Hlavní město Praha vede ve všech kategoriích. Logické – nejvíc lidí, nejvíc úvěrů, nejvíc dluhů.
+📌 Výsledek: Praha vede ve všech kategoriích. Logické – víc lidí, víc úvěrů, víc dluhů.
 
-4. Výběr klientů s určitými podmínkami (zůstatek > 1000, více než 5 půjček, narození po roce 1990)
-Výsledek: Nikdo neexistuje.
-Původně jsem si myslela, že filtr jen vyřadil pár klientů, ale žádný klient nesplňoval všechny tři podmínky najednou.
-Problém byl ve dvou bodech:
-V databázi skoro neexistují klienti narození po roce 1990. Zřejmě to byla banka pro zkušenější ročníky. 
-Nikdo neměl víc než 5 půjček. Buď byla banka opravdu přísná v poskytování úvěrů, nebo jsou klienti extrémně finančně zodpovědní. (To druhé moc pravděpodobné není.)
+4️⃣ Kolik klientů splňuje podmínky (zůstatek > 1000, víc než 5 půjček, narození po 1990)?
+💀 Nikdo. Nula. Ani jeden člověk.
 
-Client ID	Card ID	Expiration Date	Client Address	Generated For Date
-483	83	2001-01-05	Prague	2001-01-01
-858	149	2001-01-07	East Bohemia	2001-01-01
-1913	304	2001-01-06	North Moravia	2001-01-01
-Výsledek: Úspěšně vygenerovaná tabulka expirovaných karet.
+📌 Proč?
+🔹 V databázi skoro neexistují klienti narození po roce 1990. Možná banka cílila na starší a zkušenější.
+🔹 Nikdo neměl víc než 5 půjček. Buď banka byla přísná, nebo měli klienti víc rozumu, než se zdá.
 
-Chyby, na které jsem narazila
-Join na district tabulku nefungoval – ukázalo se, že sloupce mají jiný název, než jsem čekala. 
-Filtr klientů podle věku nevracel žádná data – po pečlivém pátrání jsem zjistila, že v databázi skoro žádní “mladí” klienti nejsou. 
-Závěr
-Projekt proběhl úspěšně
+5️⃣ Kdo má expirovanou platební kartu?
+Client ID	Card ID	Expiration Date	Client Address
+483	83	2001-01-05	Prague
+858	149	2001-01-07	East Bohemia
+1913	304	2001-01-06	North Moravia
+📌 Výsledek: Úspěšně vygenerovaná tabulka expirovaných karet. Někdo měl asi po roce 2001 nemilé překvapení při placení.
+
+🚨 Chyby, na které jsem narazila
+❌ Join na district tabulku nefungoval – sloupce se jmenovaly jinak, než jsem čekala.
+❌ Filtr klientů podle věku vracel prázdné výsledky – protože žádní mladí klienti v databázi nebyli.
+❌ SQL nepovoluje "kouzla" – když v datech něco není, tak to tam prostě nenajdeš.
+
+✅ Závěr
+📌 Projekt proběhl úspěšně. SQL dotazy vracejí smysluplná data, některé výsledky překvapily (jako ta nula klientů po roce 1990).
